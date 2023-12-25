@@ -1,2 +1,4 @@
 # simplified-pytorch-gan
-A simplified GAN from a well-known Pytorch tutorial
+A simplified GAN from a well-known Pytorch tutorial.
+I wanted to modify a bit the model from this tutorial: https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html. Namely, I wanted to train it on Google Colab using the CPU only and to see how much time it would take. So I took out the code connected with the usage of GPU. In this fashion, using nn.Sequential instead of nn.Module seemed to be more appropriate, so I made this change, too. I also took out the animation because I wanted to simplify it as much as possible.
+Instead of the celebrities dataset from the tutorial, I used a different one: it contained only 2555 images depicting miscellaneous scenes and objects (without any specific theme). I trained the model for 5 epochs (it took 16 minutes), then for 10 epochs (31 mins). After 5 epochs, the results didn't differ much from noise, but after 10 ones, something started taking shape. As the dataset I used is very small, such results are quite natural. A considerable increase in the number of epochs is necessary to hope to obtain something decent in this case.
